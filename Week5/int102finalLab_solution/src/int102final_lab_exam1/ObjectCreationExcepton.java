@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package week5;
+package int102final_lab_exam1;
 
 /**
  *
  * @author INT105
  */
-public class Week5 {
+public class ObjectCreationExcepton extends Exception {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public ObjectCreationExcepton(String message) {
+        super(message);
     }
     
 }
