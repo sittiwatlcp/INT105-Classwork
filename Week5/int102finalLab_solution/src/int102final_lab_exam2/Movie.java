@@ -1,5 +1,7 @@
 package int102final_lab_exam2;
 
+import int102final_lab_exam1.ObjectCreationExcepton;
+
 /**
  * Movie class ภาพยนตร์ มี title, hours, grade
  */
@@ -9,7 +11,10 @@ public class Movie {
     private final double hours; // ความยาวของภาพยนตร์เป็นชั่วโมง
     private final int grade; // ระดับคุณภาพเป็นเกรดของภาพยนตร์ 1 คือ ดีมาก; 5 คือ แย่มาก
 
-    public Movie(String title, double hours, int grade) {
+    public Movie(String title, double hours, int grade) throws ObjectCreationExcepton {
+        if (title == null || hours <= 0 || grade < 1 || grade > 5) {
+           throw new ObjectCreationExcepton("Movie.Movie: neither title is null nor hours is less than 0 nor grade is less than 1");
+        }
         this.title = (title == null) ? "No Title" : title;
         this.hours = (hours <= 0) ? 2.0 : hours;
         this.grade = (grade < 1 || grade > 5) ? 3 : grade;

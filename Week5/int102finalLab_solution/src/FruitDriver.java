@@ -1,14 +1,13 @@
 
 import int102final_lab_exam1.Fruit;
 import int102final_lab_exam1.FruitCollection;
-import int102final_lab_exam1.ObjectCreationExcepton;
 
 public class FruitDriver {
 
     public static void main(String[] args) {
         try {
-            Fruit a = new Fruit("Apple", 144.9, 10);
-            Fruit b = new Fruit(null, 48.52, 6);
+            Fruit a = new Fruit(null, 144.9, 10);
+            Fruit b = new Fruit("Apple", 48.52, 6);
             System.out.println(a);
             System.out.println(a.equals(b));
             System.out.println(a.compareTo(b));
@@ -25,7 +24,7 @@ public class FruitDriver {
             if (s >= 0) {
                 System.out.println(fc.getFruitAt(s));
             }
-        } catch(IndexOutOfBoundsException | NullPointerException | IllegalArgumentException | ExceptionInInitializerError | ObjectCreationExcepton e){
+        } catch(IndexOutOfBoundsException | NullPointerException | IllegalArgumentException | ExceptionInInitializerError e){
             System.out.println(e);
         }
 

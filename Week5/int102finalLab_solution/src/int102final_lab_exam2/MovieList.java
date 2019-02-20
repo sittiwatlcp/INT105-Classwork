@@ -1,5 +1,7 @@
 package int102final_lab_exam2;
 
+import int102final_lab_exam1.ObjectCreationExcepton;
+
 /**
  * MovieList class เก็บ array ของ Movie
  */
@@ -21,7 +23,7 @@ public class MovieList {
         return numberOfStories != movies.length;
     }
 
-    public boolean addMovie(String title, double hours, int grade) {
+    public boolean addMovie(String title, double hours, int grade) throws ObjectCreationExcepton {
         if (hours <= 0 || grade < 1 || grade > 5 || !isAvailable()) {
             return false;
         }
@@ -33,12 +35,12 @@ public class MovieList {
         if (slot >= 0 && slot < numberOfStories) {
             return movies[slot];
         }
-        return null;
+        throw new IndexOutOfBoundsException("MovieList.getMovieAt : Movie range are out of range");
     }
 
     public boolean resize(int newSize) {
         if (newSize <= movies.length) {
-            return false;
+            throw new IllegalArgumentException("MovieList.resize : expand size must bigger than 0");
         }
 
         Movie m[] = new Movie[newSize];
@@ -50,7 +52,7 @@ public class MovieList {
 
     public Movie searchForMovieTitle(String title) {
         if (title == null) {
-            return null;
+            throw new NullPointerException("MovieList.searchForMovieTitle : Name param can't be null");
         }
         for (int i = 0; i < numberOfStories; i++) {
             if (title.equals(movies[i].getTitle())) {

@@ -44,7 +44,7 @@ public class FruitCollection {
      * FruitCollection เต็ม หรือ price น้อยกว่า 0 หรือ quality ไม่ได้อยู่ในช่วง
      * 1 ถึง 10; true ถ้าสามารถใส่ผลไม้เข้าไปใน FruitCollection ได้
      */
-    public boolean addFruit(String name, double price, int quality) throws ObjectCreationExcepton {
+    public boolean addFruit(String name, double price, int quality) {
         if (price < 0 || quality < 1 || quality > 10 || isFull()) {
             return false;
         }

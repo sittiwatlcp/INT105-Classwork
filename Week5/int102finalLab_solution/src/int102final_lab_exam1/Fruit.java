@@ -17,9 +17,9 @@ public class Fruit {
      * @param quality คุณภาพ โดยให้คุณภาพเป็น 1
      * ถ้าส่งคุณภาพมาน้อยกว่า 1 และให้คุณภาพเป็น 10 ถ้าส่งคุณภาพมาเกิน 10
      */
-    public Fruit(String name, double price, int quality) throws ObjectCreationExcepton {
+    public Fruit(String name, double price, int quality) {
         if (name == null || price < 0 || quality < 1) {
-           throw new ObjectCreationExcepton("Fruit.Fruit: neither NAME is null nor PRICE is less than 0 nor QUALITY is less than 1");
+           throw new IllegalArgumentException("Fruit.Fruit: neither NAME is null nor PRICE is less than 0 nor QUALITY is less than 1");
         }
         this.name = (name == null) ? "" : name;
         this.price = (price < 0) ? 0 : price;

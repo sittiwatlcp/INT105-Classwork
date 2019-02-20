@@ -10,7 +10,7 @@ package int102final_lab_exam1;
  * @author INT105
  */
 public class ObjectCreationExcepton extends Exception {
-
+    
     public ObjectCreationExcepton(String message) {
         super(message);
     }
