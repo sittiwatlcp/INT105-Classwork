@@ -9,6 +9,7 @@
  * @author INT105
  */
 import base.*;
+import int105.base.Condition;
 import peeking.*;
 
 public class Test {
@@ -16,8 +17,21 @@ public class Test {
     public static void main(String[] args) {
         //testStudentList();
         //testStringList();
-        testGenericListString();
-        testGenericListStudent();
+        //testGenericListString();
+        //testGenericListStudent();
+        testCondition();
+    }
+
+    public static void testCondition() {
+        Condition<String> longString = (String t) -> {
+            if (t == null) {
+                throw new IllegalArgumentException();
+            }
+            return t.length() > 10;
+        };
+        System.out.println(longString.test("I am Groot."));
+        System.out.println(longString.test("I am."));
+
     }
 
     public static void testStudentList() {
@@ -33,7 +47,7 @@ public class Test {
 
         listing(slist);
     }
-    
+
     public static void testStringList() {
         StringList slist = new StringList();
         slist.add("One");
@@ -43,7 +57,7 @@ public class Test {
 
         listing(slist);
     }
-    
+
     public static void testGenericListString() {
         GenericList<String> slist = new GenericList();
         slist.add("One");
@@ -53,7 +67,7 @@ public class Test {
 
         listing(slist);
     }
-    
+
     public static void testGenericListStudent() {
         Student s1 = new Student(1, "A");
         Student s2 = new Student(2, "B");
