@@ -9,7 +9,6 @@
  * @author INT105
  */
 import base.*;
-import int105.base.Condition;
 import peeking.*;
 
 public class Test {
@@ -19,7 +18,8 @@ public class Test {
         //testStringList();
         //testGenericListString();
         //testGenericListStudent();
-        testCondition();
+        //testCondition();
+        testStudentCondition();
     }
 
     public static void testCondition() {
@@ -32,6 +32,24 @@ public class Test {
         System.out.println(longString.test("I am Groot."));
         System.out.println(longString.test("I am."));
 
+    }
+
+    public static void testStudentCondition() {
+        GenericList<Student> slist = new GenericList<>();
+        slist.add(new Student(1, "A"));
+        slist.add(new Student(2, "B"));
+        slist.add(new Student(3, "C"));
+        slist.add(new Student(4, "D"));
+        slist.add(new Student(5, "E"));
+        
+        Condition<Student> c = new Condition<Student>() {
+            @Override
+            public boolean test(Student t) {
+                return t.getId() == 3;
+            }
+            
+        };
+        System.out.println(slist.search(c));
     }
 
     public static void testStudentList() {

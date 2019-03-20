@@ -1,4 +1,4 @@
-package int105.base;
+package base;
 
 /**
  * Condition is for holding a particular state that something (T) is in. 
